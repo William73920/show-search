@@ -1,17 +1,16 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Home from "./pages/Home";
+import Starred from "./pages/Starred";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/starred">starred</Link>
-        </nav>
+        <Nav />
         <Routes>
-          <Route path="/" element={<h1>Home page</h1>} />
-          <Route path="/starred" element={<h1>starred</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/starred" element={<Starred />} />
           <Route path="*" element={<h1>404 Page not found</h1>} />
         </Routes>
       </Router>
